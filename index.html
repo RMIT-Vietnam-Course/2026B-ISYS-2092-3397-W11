@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus IT Helpdesk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="brand">Campus IT Helpdesk</div>
+    <nav class="site-nav">
+      <a href="index.html">Submit a Ticket</a>
+      <a href="sla-policy.html">SLA Policy</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+
+    <section class="card">
+      <h1>Submit a Ticket</h1>
+      <p class="lead">Complete every field. The triage engine assigns a priority, a response target, and a support
+        queue.</p>
+
+      <form id="ticketForm" novalidate>
+
+        <div class="field">
+          <label for="requesterId">Requester ID</label>
+          <input type="text" id="requesterId" name="requesterId" autocomplete="off">
+          <p class="field-error hidden" id="err-requesterId"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="text" id="email" name="email" autocomplete="off">
+          <p class="field-error hidden" id="err-email"></p>
+        </div>
+
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="">Select a category</option>
+            <option value="hardware">Hardware</option>
+            <option value="software">Software</option>
+            <option value="network">Network</option>
+            <option value="account">Account Access</option>
+          </select>
+          <p class="field-error hidden" id="err-category"></p>
+        </div>
+
+        <div class="field">
+          <label for="impact">Impact Score (1 to 10)</label>
+          <input type="text" id="impact" name="impact" inputmode="numeric" autocomplete="off">
+          <p class="field-error hidden" id="err-impact"></p>
+        </div>
+
+        <div class="field">
+          <label for="affectedUsers">Affected Users (1 to 500)</label>
+          <input type="text" id="affectedUsers" name="affectedUsers" inputmode="numeric" autocomplete="off">
+          <p class="field-error hidden" id="err-affectedUsers"></p>
+        </div>
+
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="4"></textarea>
+          <p class="field-error hidden" id="err-description"></p>
+        </div>
+
+        <div class="field field-check">
+          <input type="checkbox" id="outage" name="outage">
+          <label for="outage">Service Outage</label>
+        </div>
+
+        <button type="submit" id="triageBtn" class="primary">Triage Ticket</button>
+      </form>
+
+      <div id="spinner" class="spinner hidden" role="status">Triaging Ticket</div>
+
+      <section id="resultPanel" class="panel hidden">
+        <h2>Triage Result</h2>
+        <dl class="result">
+          <dt>Ticket Reference</dt>
+          <dd id="ticketRef"></dd>
+          <dt>Priority</dt>
+          <dd id="priorityValue"></dd>
+          <dt>Response SLA</dt>
+          <dd id="slaValue"></dd>
+          <dt>Assigned Queue</dt>
+          <dd class="queue-name"></dd>
+        </dl>
+      </section>
+    </section>
+
+    <section class="card">
+      <h2>Open Tickets</h2>
+      <table id="ticketTable">
+        <thead>
+          <tr>
+            <th>Reference</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Users</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cell-ref">NET-1038</td>
+            <td class="cell-category">Network</td>
+            <td class="cell-priority">High</td>
+            <td class="cell-users">120</td>
+            <td class="cell-status">In Progress</td>
+          </tr>
+          <tr>
+            <td class="cell-ref">SW-1039</td>
+            <td class="cell-category">Software</td>
+            <td class="cell-priority">Medium</td>
+            <td class="cell-users">12</td>
+            <td class="cell-status">Open</td>
+          </tr>
+          <tr>
+            <td class="cell-ref">HW-1040</td>
+            <td class="cell-category">Hardware</td>
+            <td class="cell-priority">Low</td>
+            <td class="cell-users">1</td>
+            <td class="cell-status">Open</td>
+          </tr>
+          <tr>
+            <td class="cell-ref">ACC-1041</td>
+            <td class="cell-category">Account Access</td>
+            <td class="cell-priority">Medium</td>
+            <td class="cell-users">8</td>
+            <td class="cell-status">Waiting</td>
+          </tr>
+          <tr>
+            <td class="cell-ref">NET-1036</td>
+            <td class="cell-category">Network</td>
+            <td class="cell-priority">Medium</td>
+            <td class="cell-users">30</td>
+            <td class="cell-status">Resolved</td>
+          </tr>
+          <tr>
+            <td class="cell-ref">SW-1037</td>
+            <td class="cell-category">Software</td>
+            <td class="cell-priority">Low</td>
+            <td class="cell-users">2</td>
+            <td class="cell-status">Open</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Campus IT Helpdesk</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

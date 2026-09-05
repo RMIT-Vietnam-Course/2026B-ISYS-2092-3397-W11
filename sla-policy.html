@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLA Policy, Campus IT Helpdesk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="brand">Campus IT Helpdesk</div>
+    <nav class="site-nav">
+      <a href="index.html">Submit a Ticket</a>
+      <a href="sla-policy.html">SLA Policy</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+
+    <section class="card">
+      <h1>SLA Policy</h1>
+      <p class="lead">Every ticket receives a priority at intake. The priority sets the response target and never
+        changes the assigned queue.</p>
+
+      <h2>Response Targets</h2>
+      <table id="policyTable">
+        <thead>
+          <tr>
+            <th>Priority</th>
+            <th>Impact Score</th>
+            <th>Respond Within</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cell-priority">High</td>
+            <td class="cell-impact">8 to 10</td>
+            <td class="cell-sla">4 hours</td>
+          </tr>
+          <tr>
+            <td class="cell-priority">Medium</td>
+            <td class="cell-impact">4 to 7</td>
+            <td class="cell-sla">8 hours</td>
+          </tr>
+          <tr>
+            <td class="cell-priority">Low</td>
+            <td class="cell-impact">1 to 3</td>
+            <td class="cell-sla">24 hours</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Escalation</h2>
+      <p>A ticket moves up one priority level when the reporter marks it as a service outage and at least 50 users are
+        affected. Both conditions are required. A High priority ticket cannot move higher.</p>
+
+      <h2>Queue Routing</h2>
+      <table id="queueTable">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Queue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cell-category">Hardware</td>
+            <td class="cell-queue">Onsite Support</td>
+          </tr>
+          <tr>
+            <td class="cell-category">Software</td>
+            <td class="cell-queue">Applications</td>
+          </tr>
+          <tr>
+            <td class="cell-category">Network</td>
+            <td class="cell-queue">Infrastructure</td>
+          </tr>
+          <tr>
+            <td class="cell-category">Account Access</td>
+            <td class="cell-queue">Identity</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Campus IT Helpdesk</p>
+  </footer>
+
+</body>
+
+</html>
